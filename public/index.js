@@ -193,6 +193,11 @@ function updateScore() {
 
   const right = document.querySelector("#score-correct");
   right.innerText = scoreRight;
+
+  if (scoreWrong >= 3) {
+    document.getElementById("thisIsTheEnd").style.display = "inline";
+    setTimeout(() => (window.location.href = "index.html"), 1500);
+  }
 }
 function continua() {
   document.getElementById("OK").style.display = "inline";
