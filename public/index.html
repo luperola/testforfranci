@@ -15,148 +15,222 @@
   </head>
 
   <body>
-    <script src="http://bernardo-castilho.github.io/DragDropTouch/DragDropTouch.js"></script>
-    <div class="row no-gutters">
+    <div class="container">
       <div class="bg"></div>
-      <div
-        class="col-sm-3 d-flex flex-column justify-content-center align-items-center"
-      >
-        <div id="draggable1" draggable="true" style="margin-top: 40px">
-          Persona che non sa le strade quando va in bici
-        </div>
-        <br />
+      <div id="score">
+        <h2 id="header">Indovina la nota</h2>
+        <span style="font-size: 15px"
+          >Giusti:
+          <span id="score-correct" style="font-size: 20px">0</span></span
+        >
+        <span style="font-size: 15px"
+          >Sbagliati:
+          <span id="score-wrong" style="font-size: 20px">0</span></span
+        >
+        <div
+          id="pentagram"
+          style="
+            background: url(chiave-di-fa.png) no-repeat;
+            background-position: left 5px top 20px;
+          "
+        >
+          <div
+            id="dl2"
+            class="line light-line"
+            style="display: none; margin-left: 105px"
+          ></div>
+          <div id="dl1" class="line light-line" style="display: none"></div>
+          <div id="l5" class="line"></div>
+          <div id="l4" class="line"></div>
+          <div id="l3" class="line"></div>
+          <div id="l2" class="line"></div>
+          <div id="l1" class="line"></div>
+          <p class="note1" id="si"></p>
+          <p class="note2" id="sol" style="display: none"></p>
+          <p class="note3" id="mi" style="display: none"></p>
+          <p class="note4" id="do" style="display: none"></p>
+          <p class="note5" id="sol1" style="display: none"></p>
+          <p class="note6" id="la" style="display: none"></p>
+          <p class="note7" id="re" style="display: none"></p>
+          <p class="note8" id="si1" style="display: none"></p>
+          <p class="note9" id="do1" style="display: none"></p>
+          <p class="note10" id="re1" style="display: none"></p>
+          <p class="note11" id="fa" style="display: none"></p>
+          <p class="note12" id="la1" style="display: none"></p>
 
-        <div id="draggable2" draggable="true">
-          Persona che ogni tanto si mette a testa in giù
-        </div>
-        <br />
-        <div id="draggable3" draggable="true">
-          Persona che non sbaglia mai un congiuntivo
-        </div>
-        <br />
-        <div id="draggable" draggable="true">Persona che non usa pettini</div>
-        <br />
-      </div>
-      <br />
-      <div
-        class="col-sm-3 d-flex flex-column justify-content-center align-items-center"
-      >
-        <div
-          class="dropzone d-flex flex-column justify-content-center align-items-center"
-          id="dropzone"
-        >
-          <b class="bold">Luigi</b>
-          <span
-            id="OK1"
-            style="
-              display: none;
-              font-size: 30px;
-              font-weight: bolder;
-              color: red;
-            "
-          >
-            OK !!</span
-          >
-        </div>
-        <br />
-        <div
-          class="dropzone1 d-flex flex-column justify-content-center align-items-center"
-          id="dropzone1"
-        >
-          <b class="bold">Francesca</b>
-          <span
-            id="OK2"
-            style="
-              display: none;
-              font-size: 30px;
-              font-weight: bolder;
-              color: red;
-            "
-          >
-            OK !!</span
-          >
-        </div>
-        <br />
-        <div
-          class="dropzone2 d-flex flex-column justify-content-center align-items-center"
-          id="dropzone2"
-        >
-          <b class="bold">Piero</b>
-          <span
-            id="OK3"
-            style="
-              display: none;
-              font-size: 30px;
-              font-weight: bolder;
-              color: red;
-            "
-          >
-            OK !!</span
-          >
-        </div>
-        <br />
-        <div
-          class="dropzone3 d-flex flex-column justify-content-center align-items-center"
-          id="dropzone3"
-        >
-          <b class="bold">Silvia</b>
-          <span
-            id="OK4"
-            style="
-              display: none;
-              font-size: 30px;
-              font-weight: bolder;
-              color: red;
-            "
-          >
-            OK !!</span
-          >
-        </div>
-      </div>
-      <div
-        class="col-sm-3 d-flex flex-column justify-content-center align-items-center"
-      >
-        <!-- Mostra OK -->
-        <img
-          src="OK.jpg"
-          style="display: none; width: 300px; height: 300px"
-          id="OK"
-        />
-        <h1 style="color: red; display: none" id="writeOK"><b>GIUSTO!</b></h1>
-        <button
-          type="button"
-          class="btn btn-primary"
-          id="btnOK"
-          style="display: none"
-          onclick="window.open('game2.html', '_blank').focus();"
-        >
-          Clicca qui per andare al prossimo test
-        </button>
+          <div class="row" style="justify-content: center">
+            <button
+              id="notaDo"
+              style="
+                color: red;
+                font-size: 50px;
+                margin-left: 20px;
+                margin-right: 20px;
+                background: transparent;
+                border: none;
+                padding: 5px;
+              "
+              onclick="notaDo()"
+            >
+              <b><i>DO</i></b>
+            </button>
 
-        <!-- Mostra primo errore -->
-        <img
-          src="numero1.jpg"
-          style="width: 150px; height: 150px; display: none"
-          id="primoNO"
-        />
-        <h1 style="color: blue; display: none; text-align: center" id="writeNO">
-          <b>UN ERRORE !</b>
-        </h1>
-
-        <!-- Mostra seconda errore -->
-        <img
-          src="numero2.jpg"
-          style="width: 150px; height: 150px; display: none"
-          id="secondoNO"
-        />
-        <h1
-          style="color: blue; display: none; text-align: center"
-          id="writesecondNO"
-        >
-          <b>2 ERRORI ! SI RICOMINCIA !</b>
-        </h1>
+            <button
+              id="notaRe"
+              style="
+                color: darkgreen;
+                font-size: 50px;
+                margin-left: 20px;
+                margin-right: 20px;
+                border: none;
+                background: transparent;
+                padding: 5px;
+              "
+              onclick="notaRe()"
+            >
+              <b><i>RE</i></b>
+            </button>
+            <button
+              id="notaMi"
+              style="
+                color: darkblue;
+                font-size: 50px;
+                margin-left: 20px;
+                margin-right: 20px;
+                border: none;
+                background: transparent;
+                padding: 5px;
+              "
+              onclick="notaMi()"
+            >
+              <b><i>MI</i></b>
+            </button>
+            <button
+              id="notaFa"
+              style="
+                color: darkviolet;
+                font-size: 50px;
+                margin-left: 20px;
+                margin-right: 20px;
+                border: none;
+                background: transparent;
+                padding: 5px;
+              "
+              onclick="notaFa()"
+            >
+              <b><i>FA</i></b>
+            </button>
+            <button
+              id="notaSol"
+              style="
+                color: darkgoldenrod;
+                font-size: 50px;
+                margin-left: 20px;
+                margin-right: 20px;
+                border: none;
+                background: transparent;
+                padding: 5px;
+              "
+              onclick="notaSol()"
+            >
+              <b><i>SOL</i></b>
+            </button>
+            <button
+              id="notaLa"
+              style="
+                color: darkorange;
+                font-size: 50px;
+                margin-left: 20px;
+                margin-right: 20px;
+                border: none;
+                background: transparent;
+                padding: 5px;
+              "
+              onclick="notaLa()"
+            >
+              <b><i>LA</i></b>
+            </button>
+            <button
+              id="notaSi"
+              style="
+                color: darkcyan;
+                font-size: 50px;
+                margin-left: 20px;
+                margin-right: 20px;
+                border: none;
+                background: transparent;
+                padding: 5px;
+              "
+              onclick="notaSi()"
+            >
+              <b><i>SI</i></b>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
+    <div style="align-content: center">
+      <img
+        id="OK"
+        src="OK.jpg"
+        style="display: none; width: 50%; height: 50%"
+      />
+      <button
+        class="btn btn-primary"
+        style="display: none"
+        id="next"
+        onclick="prossimoTest()"
+      >
+        <i>Vai al prossimo test</i>
+      </button>
+    </div>
+
+    <!-- <div class="row" style="justify-content: center">
+        <img
+          class="nota"
+          src="Do.jpg"
+          style="margin-right: 15px; margin-bottom: 10px"
+          value="do"
+        />
+       onclick="notaDo()" onclick="notaRe()"onclick="notaMi()" 
+        <img
+          class="nota"
+          src="Re.jpg"
+          style="margin-right: 15px; margin-bottom: 10px"
+          value="re"
+        />
+        <img
+          class="nota"
+          src="Mi.jpg"
+          style="margin-right: 15px; margin-bottom: 10px"
+          value="mi"
+        />
+        <img
+          class="nota"
+          src="Fa.jpg"
+          style="margin-right: 15px; margin-bottom: 10px"
+          onclick="notaFa()"
+        />
+        <img
+          class="nota"
+          src="Sol.jpg"
+          style="margin-right: 15px; margin-bottom: 10px"
+          onclick="notaSol()"
+        />
+        <img
+          class="nota"
+          src="La.jpg"
+          style="margin-right: 15px; margin-bottom: 10px"
+          onclick="notaLa()"
+        />
+        <img
+          class="nota"
+          src="Si.jpg"
+          style="margin-right: 15px; margin-bottom: 10px"
+          onclick="notaSi()"
+        /> 
+      </div>-->
+
     <script src="index.js"></script>
 
     <script
