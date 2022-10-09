@@ -10,15 +10,15 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <title>Test#1</title>
-    <link rel="stylesheet" href="myStyle.css" />
+    <title>Test #2</title>
+    <link rel="stylesheet" href="myStyle2.css" />
   </head>
 
   <body>
     <div class="container">
       <div class="bg"></div>
       <div id="score">
-        <h2 id="header">Indovina la nota Test #1</h2>
+        <h2 id="header">Indovina la nota - Test #2</h2>
         <span style="font-size: 15px"
           >Giusti:
           <span id="score-correct" style="font-size: 20px">0</span></span
@@ -27,11 +27,12 @@
           >Sbagliati:
           <span id="score-wrong" style="font-size: 20px">0</span></span
         >
+        <br /><br />
         <div
           id="pentagram"
           style="
-            background: url(./imgs/chiave-di-fa.png) no-repeat;
-            background-position: left 5px top 20px;
+            background: url(./imgs/Chiave_di_violino.jpg) no-repeat;
+            background-position: left 5px top -5px;
           "
         >
           <div
@@ -39,40 +40,64 @@
             class="line light-line"
             style="display: none; margin-left: 105px"
           ></div>
-          <div id="dl1" class="line light-line" style="display: none"></div>
           <div id="l5" class="line"></div>
           <div id="l4" class="line"></div>
           <div id="l3" class="line"></div>
           <div id="l2" class="line"></div>
           <div id="l1" class="line"></div>
-          <p class="note1" id="si"></p>
-          <p class="note2" id="sol" style="display: none"></p>
-          <p class="note3" id="mi" style="display: none"></p>
-          <p class="note4" id="do" style="display: none"></p>
-          <p class="note5" id="sol1" style="display: none"></p>
-          <p class="note6" id="la" style="display: none"></p>
-          <p class="note7" id="re" style="display: none"></p>
+          <div id="dl1" class="line light-line" style="display: none"></div>
+          <p class="note12" id="fa"></p>
+          <p class="note9" id="do" style="display: none"></p>
+          <p class="note11" id="re" style="display: none"></p>
+          <p class="note10" id="la" style="display: none"></p>
+          <p class="note8" id="sol" style="display: none"></p>
+          <p class="note4" id="la1" style="display: none"></p>
+          <p class="note5" id="mi" style="display: none"></p>
+          <p class="note2" id="mi1" style="display: none"></p>
+          <p class="note7" id="si" style="display: none"></p>
+          <p class="note13" id="re1" style="display: none"></p>
+          <p class="note6" id="fa1" style="display: none"></p>
+          <p class="note3" id="do1" style="display: none"></p>
+          <p class="note1" id="sol1" style="display: none"></p>
+
+          <!--      
+          
           <p class="note8" id="si1" style="display: none"></p>
-          <p class="note9" id="do1" style="display: none"></p>
-          <p class="note10" id="re1" style="display: none"></p>
-          <p class="note11" id="fa" style="display: none"></p>
-          <p class="note12" id="la1" style="display: none"></p>
+          
+          
+           -->
 
           <div class="row" style="justify-content: center">
             <button
-              id="notaDo"
+              id="notaSol"
               style="
-                color: red;
+                color: darkgoldenrod;
                 font-size: 50px;
                 margin-left: 20px;
                 margin-right: 20px;
-                background: transparent;
                 border: none;
+                background: transparent;
                 padding: 5px;
               "
-              onclick="notaDo()"
+              onclick="notaSol()"
             >
-              <b><i>DO</i></b>
+              <b><i>SOL</i></b>
+            </button>
+
+            <button
+              id="notaLa"
+              style="
+                color: darkorange;
+                font-size: 50px;
+                margin-left: 20px;
+                margin-right: 20px;
+                border: none;
+                background: transparent;
+                padding: 5px;
+              "
+              onclick="notaLa()"
+            >
+              <b><i>LA</i></b>
             </button>
 
             <button
@@ -90,21 +115,23 @@
             >
               <b><i>RE</i></b>
             </button>
+
             <button
-              id="notaMi"
+              id="notaDo"
               style="
-                color: darkblue;
+                color: red;
                 font-size: 50px;
                 margin-left: 20px;
                 margin-right: 20px;
-                border: none;
                 background: transparent;
+                border: none;
                 padding: 5px;
               "
-              onclick="notaMi()"
+              onclick="notaDo()"
             >
-              <b><i>MI</i></b>
+              <b><i>DO</i></b>
             </button>
+
             <button
               id="notaFa"
               style="
@@ -120,36 +147,7 @@
             >
               <b><i>FA</i></b>
             </button>
-            <button
-              id="notaSol"
-              style="
-                color: darkgoldenrod;
-                font-size: 50px;
-                margin-left: 20px;
-                margin-right: 20px;
-                border: none;
-                background: transparent;
-                padding: 5px;
-              "
-              onclick="notaSol()"
-            >
-              <b><i>SOL</i></b>
-            </button>
-            <button
-              id="notaLa"
-              style="
-                color: darkorange;
-                font-size: 50px;
-                margin-left: 20px;
-                margin-right: 20px;
-                border: none;
-                background: transparent;
-                padding: 5px;
-              "
-              onclick="notaLa()"
-            >
-              <b><i>LA</i></b>
-            </button>
+
             <button
               id="notaSi"
               style="
@@ -164,6 +162,39 @@
               onclick="notaSi()"
             >
               <b><i>SI</i></b>
+            </button>
+
+            <button
+              id="notaMi"
+              style="
+                color: darkblue;
+                font-size: 50px;
+                margin-left: 20px;
+                margin-right: 20px;
+                border: none;
+                background: transparent;
+                padding: 5px;
+              "
+              onclick="notaMi()"
+            >
+              <b><i>MI</i></b>
+            </button>
+
+            <button
+              id="notaMi1"
+              style="
+                color: darkblue;
+                font-size: 50px;
+                margin-left: 20px;
+                margin-right: 20px;
+                border: none;
+                background: transparent;
+                padding: 5px;
+                display: none;
+              "
+              onclick="notaMi1()"
+            >
+              <b><i>MI</i></b>
             </button>
             <br />
             <h2
@@ -244,7 +275,7 @@
         /> 
       </div>-->
 
-    <script src="index.js"></script>
+    <script src="test2.js"></script>
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

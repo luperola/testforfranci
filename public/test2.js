@@ -1,5 +1,5 @@
 let nota, testDo, testRe, testMi, testFa, testSol, testLa, testSi;
-nota = document.getElementById("si").id;
+nota = document.getElementById("fa").id;
 const correctFx = new Audio("./sounds/correct.mp3");
 const wrongFx = new Audio("./sounds/quack.mp3");
 let scoreRight = 0;
@@ -11,9 +11,10 @@ function notaDo() {
   if (nota === "do") {
     //correctFx.play();
     document.getElementById("do").style.display = "none";
-    document.getElementById("sol1").style.display = "block";
+    document.getElementById("dl1").style.display = "none";
+    document.getElementById("re").style.display = "block";
     scoreRight++;
-    nota = document.getElementById("sol1").id;
+    nota = document.getElementById("re").id;
     console.log("nota", nota);
     testDo = 1;
     wrongNota = 0;
@@ -22,11 +23,9 @@ function notaDo() {
   if (nota === "do1") {
     //correctFx.play();
     document.getElementById("do1").style.display = "none";
-    document.getElementById("dl1").style.display = "none";
-    document.getElementById("re1").style.display = "block";
-    document.getElementById("dl2").style.display = "block";
+    document.getElementById("sol1").style.display = "block";
     scoreRight++;
-    nota = document.getElementById("re1").id;
+    nota = document.getElementById("sol1").id;
     console.log("nota", nota);
     testDo = 1;
     wrongNota = 0;
@@ -45,22 +44,21 @@ function notaRe() {
   if (nota === "re") {
     //correctFx.play();
     document.getElementById("re").style.display = "none";
-    document.getElementById("si1").style.display = "block";
+    document.getElementById("la").style.display = "block";
+    document.getElementById("dl2").style.display = "block";
     scoreRight++;
-    nota = document.getElementById("si1").id;
+    nota = document.getElementById("la").id;
     console.log("nota", nota);
     testRe = 1;
     wrongNota = 0;
     updateScore();
   }
-
   if (nota === "re1") {
     //correctFx.play();
     document.getElementById("re1").style.display = "none";
-    document.getElementById("dl2").style.display = "none";
-    document.getElementById("fa").style.display = "block";
+    document.getElementById("fa1").style.display = "block";
     scoreRight++;
-    nota = document.getElementById("fa").id;
+    nota = document.getElementById("fa1").id;
     console.log("nota", nota);
     testRe = 1;
     wrongNota = 0;
@@ -78,9 +76,29 @@ function notaMi() {
   if (nota === "mi") {
     //correctFx.play();
     document.getElementById("mi").style.display = "none";
-    document.getElementById("do").style.display = "block";
+    document.getElementById("mi1").style.display = "block";
+    document.getElementById("notaMi").style.display = "none";
+    document.getElementById("notaMi1").style.display = "block";
     scoreRight++;
-    nota = document.getElementById("do").id;
+    nota = document.getElementById("mi1").id;
+    console.log("nota", nota);
+    wrongNota = 0;
+    updateScore();
+  } else {
+    wrongFx.play();
+    scoreWrong++;
+    wrongNota++;
+    erroriStessaNota();
+    updateScore();
+  }
+}
+function notaMi1() {
+  if (nota === "mi1") {
+    //correctFx.play();
+    document.getElementById("mi1").style.display = "none";
+    document.getElementById("si").style.display = "block";
+    scoreRight++;
+    nota = document.getElementById("si").id;
     console.log("nota", nota);
     wrongNota = 0;
     updateScore();
@@ -93,16 +111,31 @@ function notaMi() {
   }
 }
 function notaFa() {
+  testFa = 0;
   if (nota === "fa") {
     //correctFx.play();
     document.getElementById("fa").style.display = "none";
-    document.getElementById("la1").style.display = "block";
+    document.getElementById("do").style.display = "block";
+    document.getElementById("dl1").style.display = "block";
     scoreRight++;
-    nota = document.getElementById("la1").id;
+    testFa = 1;
+    wrongNota = 0;
+    nota = document.getElementById("do").id;
     console.log("nota", nota);
+    updateScore();
+  }
+  if (nota === "fa1") {
+    //correctFx.play();
+    document.getElementById("fa1").style.display = "none";
+    document.getElementById("do1").style.display = "block";
+    scoreRight++;
+    nota = document.getElementById("do1").id;
+    console.log("nota", nota);
+    testFa = 1;
     wrongNota = 0;
     updateScore();
-  } else {
+  }
+  if (testFa === 0) {
     wrongFx.play();
     scoreWrong++;
     wrongNota++;
@@ -114,27 +147,25 @@ function notaSol() {
   testSol = 0;
   if (nota === "sol") {
     //correctFx.play();
-
     document.getElementById("sol").style.display = "none";
-    document.getElementById("mi").style.display = "block";
+    document.getElementById("la1").style.display = "block";
     scoreRight++;
-    nota = document.getElementById("mi").id;
+    nota = document.getElementById("la1").id;
     console.log("nota", nota);
     testSol = 1;
     wrongNota = 0;
     updateScore();
   }
-
   if (nota === "sol1") {
     //correctFx.play();
     document.getElementById("sol1").style.display = "none";
-    document.getElementById("la").style.display = "block";
     scoreRight++;
-    nota = document.getElementById("la").id;
+    nota = "";
     console.log("nota", nota);
     testSol = 1;
     wrongNota = 0;
     updateScore();
+    continua();
   }
   if (testSol === 0) {
     wrongFx.play();
@@ -149,9 +180,10 @@ function notaLa() {
   if (nota === "la") {
     //correctFx.play();
     document.getElementById("la").style.display = "none";
-    document.getElementById("re").style.display = "block";
+    document.getElementById("dl2").style.display = "none";
+    document.getElementById("sol").style.display = "block";
     scoreRight++;
-    nota = document.getElementById("re").id;
+    nota = document.getElementById("sol").id;
     console.log("nota", nota);
     testLa = 1;
     wrongNota = 0;
@@ -160,13 +192,13 @@ function notaLa() {
   if (nota === "la1") {
     //correctFx.play();
     document.getElementById("la1").style.display = "none";
+    document.getElementById("mi").style.display = "block";
     scoreRight++;
-    nota = "";
+    nota = document.getElementById("mi").id;
     console.log("nota", nota);
     testLa = 1;
     wrongNota = 0;
     updateScore();
-    continua();
   }
   if (testLa === 0) {
     wrongFx.play();
@@ -180,27 +212,13 @@ function notaSi() {
   testSi = 0;
   if (nota === "si") {
     //correctFx.play();
-    document.getElementById("si").style.backgroundColor = "red";
-    setInterval("", 3000);
     document.getElementById("si").style.display = "none";
-    document.getElementById("sol").style.display = "block";
+    document.getElementById("re1").style.display = "block";
     scoreRight++;
-    nota = document.getElementById("sol").id;
+    nota = document.getElementById("re1").id;
     testSi = 1;
     wrongNota = 0;
     console.log("nota", nota);
-    updateScore();
-  }
-  if (nota === "si1") {
-    //correctFx.play();
-    document.getElementById("si1").style.display = "none";
-    document.getElementById("do1").style.display = "block";
-    document.getElementById("dl1").style.display = "block";
-    scoreRight++;
-    nota = document.getElementById("do1").id;
-    console.log("nota", nota);
-    testSi = 1;
-    wrongNota = 0;
     updateScore();
   }
   if (testSi === 0) {
@@ -221,7 +239,7 @@ function updateScore() {
 
   if (scoreWrong >= 9) {
     document.getElementById("thisIsTheEnd").style.display = "inline";
-    setTimeout(() => (window.location.href = "index.html"), 1500);
+    setTimeout(() => (window.location.href = "test2.html"), 1500);
   }
 }
 function continua() {
@@ -230,12 +248,12 @@ function continua() {
 }
 
 function prossimoTest() {
-  window.open("test2.html", "_blank").focus();
+  window.open("test3.html", "_blank").focus();
 }
 
 function erroriStessaNota() {
   if (wrongNota >= 3) {
     document.getElementById("erroreNota").style.display = "inline";
-    setTimeout(() => (window.location.href = "index.html"), 1500);
+    setTimeout(() => (window.location.href = "test2.html"), 1500);
   }
 }
