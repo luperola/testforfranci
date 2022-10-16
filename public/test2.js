@@ -1,6 +1,7 @@
 let nota, testDo, testRe, testMi, testFa, testSol, testLa, testSi;
 nota = document.getElementById("fa").id;
-const correctFx = new Audio("./sounds/correct.mp3");
+//const correctFx = new Audio("./sounds/correct.mp3");
+const correctFx = new Audio("./sounds/tada.mp3");
 const wrongFx = new Audio("./sounds/quack.mp3");
 let scoreRight = 0;
 let scoreWrong = 0;
@@ -9,7 +10,7 @@ let wrongNota = 0;
 function notaDo() {
   testDo = 0;
   if (nota === "do") {
-    //correctFx.play();
+    correctFx.play();
     document.getElementById("do").style.display = "none";
     document.getElementById("dl1").style.display = "none";
     document.getElementById("re").style.display = "block";
@@ -21,7 +22,7 @@ function notaDo() {
     updateScore();
   }
   if (nota === "do1") {
-    //correctFx.play();
+    correctFx.play();
     document.getElementById("do1").style.display = "none";
     document.getElementById("sol1").style.display = "block";
     scoreRight++;
@@ -42,7 +43,7 @@ function notaDo() {
 function notaRe() {
   testRe = 0;
   if (nota === "re") {
-    //correctFx.play();
+    correctFx.play();
     document.getElementById("re").style.display = "none";
     document.getElementById("la").style.display = "block";
     document.getElementById("dl2").style.display = "block";
@@ -54,7 +55,7 @@ function notaRe() {
     updateScore();
   }
   if (nota === "re1") {
-    //correctFx.play();
+    correctFx.play();
     document.getElementById("re1").style.display = "none";
     document.getElementById("fa1").style.display = "block";
     scoreRight++;
@@ -74,7 +75,7 @@ function notaRe() {
 }
 function notaMi() {
   if (nota === "mi") {
-    //correctFx.play();
+    correctFx.play();
     document.getElementById("mi").style.display = "none";
     document.getElementById("mi1").style.display = "block";
     document.getElementById("notaMi").style.display = "none";
@@ -94,7 +95,7 @@ function notaMi() {
 }
 function notaMi1() {
   if (nota === "mi1") {
-    //correctFx.play();
+    correctFx.play();
     document.getElementById("mi1").style.display = "none";
     document.getElementById("si").style.display = "block";
     scoreRight++;
@@ -113,7 +114,7 @@ function notaMi1() {
 function notaFa() {
   testFa = 0;
   if (nota === "fa") {
-    //correctFx.play();
+    correctFx.play();
     document.getElementById("fa").style.display = "none";
     document.getElementById("do").style.display = "block";
     document.getElementById("dl1").style.display = "block";
@@ -125,7 +126,7 @@ function notaFa() {
     updateScore();
   }
   if (nota === "fa1") {
-    //correctFx.play();
+    correctFx.play();
     document.getElementById("fa1").style.display = "none";
     document.getElementById("do1").style.display = "block";
     scoreRight++;
@@ -146,7 +147,7 @@ function notaFa() {
 function notaSol() {
   testSol = 0;
   if (nota === "sol") {
-    //correctFx.play();
+    correctFx.play();
     document.getElementById("sol").style.display = "none";
     document.getElementById("la1").style.display = "block";
     scoreRight++;
@@ -157,7 +158,7 @@ function notaSol() {
     updateScore();
   }
   if (nota === "sol1") {
-    //correctFx.play();
+    correctFx.play();
     document.getElementById("sol1").style.display = "none";
     scoreRight++;
     nota = "";
@@ -178,7 +179,7 @@ function notaSol() {
 function notaLa() {
   testLa = 0;
   if (nota === "la") {
-    //correctFx.play();
+    correctFx.play();
     document.getElementById("la").style.display = "none";
     document.getElementById("dl2").style.display = "none";
     document.getElementById("sol").style.display = "block";
@@ -190,7 +191,7 @@ function notaLa() {
     updateScore();
   }
   if (nota === "la1") {
-    //correctFx.play();
+    correctFx.play();
     document.getElementById("la1").style.display = "none";
     document.getElementById("mi").style.display = "block";
     scoreRight++;
@@ -211,7 +212,7 @@ function notaLa() {
 function notaSi() {
   testSi = 0;
   if (nota === "si") {
-    //correctFx.play();
+    correctFx.play();
     document.getElementById("si").style.display = "none";
     document.getElementById("re1").style.display = "block";
     scoreRight++;

@@ -25,8 +25,9 @@ const noteLibrary = [
     3: "ré",
   },
 ];
-const correctFx = new Audio("./sound/correct.mp3");
-const wrongFx = new Audio("./sound/quack.mp3");
+//const correctFx = new Audio("./sounds/correct.mp3");
+const correctFx = new Audio("./sounds/tada.mp3");
+const wrongFx = new Audio("./sounds/quack.mp3");
 let currentNote = "";
 let lastNote = "";
 let answered = false;
