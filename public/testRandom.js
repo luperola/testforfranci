@@ -112,7 +112,7 @@ function validateAnswer() {
     if (cleanInput === currentNote) {
       console.log(">> Correct!");
       scoreRight++;
-      correctFx.play();
+      //correctFx.play();
     } else {
       console.log(">> Wrong!");
       scoreWrong++;
